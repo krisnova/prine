@@ -1,1 +1,19 @@
-<!--Index.html-->
+<!DOCTYPE html>
+<html>
+    {{- partial "head.html" . -}}
+    <body class="main">
+    {{- partial "header.html" . -}}
+    <div class="container">
+        <div class="flex-row">
+            <div class="content" id="content">
+            {{- block "main" . }}
+
+                {{- partial "home.html" . -}}
+
+            {{- end }}
+            </div>
+        </div>
+        {{- partial "footer.html" . -}}
+    </div>
+    </body>
+</html>

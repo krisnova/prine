@@ -1,0 +1,19 @@
+<head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noodp" />
+    <link rel="canonical" href="{{ .Permalink }}" />
+    <link rel="stylesheet" href="{{ "css/styles.css" | absURL }}" />
+
+    <!--Title-->
+    {{ block "title" . }}
+    <title>
+        {{ if .IsHome }}
+        {{ $.Site.Title }}{{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
+        {{ else }}
+        {{ $.Site.Title }}{{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
+        {{ end }}
+    </title>
+    {{ end }}
+</head>
