@@ -38,13 +38,3 @@
     </ul>
 
 </nav>
-
-<nav class="menu-alt content-mobile" id="mobile-menu">
-    <ul>
-        {{ range $.Site.Menus.main }}
-        {{ if not .HasChildren }}
-        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-        {{ end }}
-        {{ end }}
-    </ul>
-</nav>

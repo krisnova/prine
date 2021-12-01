@@ -167,34 +167,6 @@ post.a {
 }
 
 
-/* TOGGLE */
-.toggle-contrast {
-    /* ID for Javascript */
-}
-
-.toggle-sidebar {
-    /* ID for Javascript */
-}
-
-.toggle-mobile-menu {
-    /* ID for Javascript */
-    display: none;
-}
-
-
-/* TOGGLE USES THIS CLASS */
-.hidden {
-    display: none
-}
-
-.content-desktop {
-    display: block;
-}
-
-.content-mobile {
-    display: none;
-}
-
 /* DISPLAY MOBILE */
 
 @media screen and (max-width:768px) {
@@ -248,15 +220,13 @@ post.a {
     src: url('fonts/TerminusModern.ttf') format('truetype');
 }
 
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
 
 
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
 
 
-
-
-
-
-/* */
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
 
 
 .button-container {
@@ -1138,8 +1108,7 @@ blockquote.twitter-tweet {
 }
 
 .footer {
-    padding: 40px 20px;
-    flex-grow: 100;
+    padding-top: 10px;
     border-top: #96c3f1 1px solid;
     background: #1A1616;
     color: var(--color);

@@ -6,35 +6,42 @@
         {{ partial "menu.html" . }}
       {{ end }}
 
-        <!-- Sidebar Adjust -->
-      <span class="toggle-sidebar menu-icon">
-        {{ partial "fa.html" "signal" }}
-      </span>
-
-        <!-- Contrast Adjust -->
-      <span class="toggle-contrast menu-icon menu-desktop">
+      <!--Settings-->
+      {{ if $.Site.Params.SettingsURL }}
+      <a href="{{ $.Site.Params.SettingsURL }}" title="{{ $.Site.Params.SettingsText }}" target="_blank" rel="noopener noreferrer" class="menu-icon">
         {{ partial "fa.html" "sliders" }}
-      </span>
-
-        <!-- Mobile Menu Adjust -->
-      <span class="toggle-mobile-menu menu-icon">
-        {{ partial "fa.html" "bars" }}
-      </span>
-
-        <!-- Discord -->
-      <a href="https://discord.gg/QG27kwx4nf" target="_blank" rel="noopener noreferrer" class="menu-icon">
-        {{ partial "fa.html" "discord" }}
       </a>
+      {{ end }}
 
-        <!-- Twitter -->
-      <a href="https://twitter.com/krisnova" target="_blank" rel="noopener noreferrer" class="menu-icon">
+      <!--Twitter-->
+      {{ if $.Site.Params.TwitterURL }}
+      <a href="{{ $.Site.Params.TwitterURL }}" title="{{ $.Site.Params.TwitterText }}" target="_blank" rel="noopener noreferrer" class="menu-icon">
         {{ partial "fa.html" "twitter" }}
       </a>
+      {{ end }}
 
-        <!-- Nivenly.com -->
-      <a href="https://github.com/kris-nova/nivenly.com" target="_blank" rel="noopener noreferrer" class="menu-icon">
+      <!--GitHub-->
+      {{ if $.Site.Params.GithubURL }}
+      <a href="{{ $.Site.Params.GithubURL }}" title="{{ $.Site.Params.GithubText }}" target="_blank" rel="noopener noreferrer" class="menu-icon">
         {{ partial "fa.html" "github" }}
       </a>
+      {{ end }}
+
+      <!--Discord-->
+      {{ if $.Site.Params.DiscordURL }}
+      <a href="{{ $.Site.Params.DiscordURL }}" title="{{ $.Site.Params.DiscordText }}" target="_blank" rel="noopener noreferrer" class="menu-icon">
+        {{ partial "fa.html" "discord" }}
+      </a>
+      {{ end }}
+
+      <!--YouTube-->
+      {{ if $.Site.Params.YoutubeURL }}
+      <a href="{{ $.Site.Params.YoutubeURL }}" title="{{ $.Site.Params.YoutubeText }}" target="_blank" rel="noopener noreferrer" class="menu-icon">
+        {{ partial "fa.html" "youtube" }}
+      </a>
+      {{ end }}
+
+
 
     </span>
   </span>
