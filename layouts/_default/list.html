@@ -1,54 +1,12 @@
 {{ define "main" }}
-  <div class="posts">
+  <div class="content-container">
     {{ range .Pages }}
-      <div class="post on-list">
+      <div class="content-container">
         <h1 class="content-h1"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
-        <div class="post-meta">
-          {{ if .Date }}
-            <span class="post-date">
-              {{ .Date.Format ($.Site.Params.DateFormatList | default "2006-01-02") }}
-            </span>
-
-            {{ if $.Site.Params.LastModDisplay }}
-              {{ partial "lastmod.html" . }}
-            {{ end }}
-          {{ end }}
-          {{ with .Params.Author }}
-            <span class="post-author"
-              >— {{ $.Site.Params.WrittenBy | default "" }} {{ . }}</span
-            >{{ end }}
+        <div class="content-meta">
 
 
-          {{ if $.Site.Params.ShowReadingTime }}
-            <span class="post-read-time"
-              >— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span
-            >
-          {{ end }}
-        </div>
-
-        {{ if .Params.tags }}
-          <span class="post-tags">
-            {{ range .Params.tags }}
-              <a href="{{ (urlize (printf "tags/%s" . )) | absURL }}/">#{{ . }}</a>&nbsp;
-            {{ end }}
-          </span>
-        {{ end }}
-
-        {{ if .Params.Cover }}
-          <figure class="post-cover">
-         {{ if .Params.UseRelativeCover }}
-            <img src="{{ (printf "%s%s" .Permalink .Params.Cover ) }}" alt="{{ .Params.CoverAlt | plainify | default .Title }}" />
-          {{ else }}
-            <img src="{{ .Params.Cover | absURL }}" alt="{{ .Params.CoverAlt | plainify | default .Title }}" />
-            {{ end }}
-
-            {{ if .Params.CoverCaption }}
-              <figcaption class="center">{{ .Params.CoverCaption | markdownify }}</figcaption>
-            {{ end }}
-          </figure>
-        {{ end }}
-
-        <div class="post-content">
+        <div class="content-summary">
           {{ with .Summary }}
             {{ . | markdownify }}
             {{ else }}
@@ -57,13 +15,16 @@
             {{ end }}
           {{ end }}
         </div>
-        {{ if not .Params.hideReadMore }}
-          <div>
-            <a class="read-more button" href="{{ .RelPermalink }}"
-              >{{ $.Site.Params.ReadMore | default "Read more" }} →</a
-            >
+          <div class="content-more">
+            <a href="{{ .RelPermalink }}">
+              {{ partial "fa-p.html" "angle-right" }} More
+            </a>
           </div>
-        {{ end }}
+          <div class="content-more">
+          {{ with .Params.Author }}
+            {{ partial "fa-p.html" "pen" }} {{ $.Site.Params.WrittenBy | default "" }} {{ . }}
+          {{ end }}
+          </div>
       </div>
     {{ end }}
     {{ partial "pagination.html" . }}

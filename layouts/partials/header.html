@@ -8,9 +8,11 @@
 
       <!--Settings-->
       {{ if $.Site.Params.SettingsURL }}
+      <span class="color-base">
       <a href="{{ $.Site.Params.SettingsURL }}" title="{{ $.Site.Params.SettingsText }}" target="_blank" rel="noopener noreferrer" class="menu-icon">
         {{ partial "fa.html" "sliders" }}
       </a>
+      </span>
       {{ end }}
 
       <!--Twitter-->
@@ -46,52 +48,3 @@
     </span>
   </span>
 </header>
-
-<!--<script>-->
-<!--    &lt;!&ndash; Toggle Contrast &ndash;&gt;-->
-<!--    const getTheme = window.localStorage && window.localStorage.getItem("theme");-->
-<!--    const themeToggle = document.querySelector(".toggle-contrast");-->
-<!--    const isDark = getTheme === "dark";-->
-
-<!--    if (getTheme !== null) {-->
-<!--        document.body.classList.toggle("dark-theme", isDark);-->
-<!--    }-->
-
-<!--    themeToggle.addEventListener("click", () => {-->
-<!--        document.body.classList.toggle("dark-theme");-->
-<!--        window.localStorage &&-->
-<!--        window.localStorage.setItem(-->
-<!--            "theme",-->
-<!--            document.body.classList.contains("dark-theme") ? "dark" : "light",-->
-<!--        );-->
-<!--    });-->
-
-<!--    &lt;!&ndash; Toggle Mobile Menu &ndash;&gt;-->
-<!--    const getMobileMenu = window.localStorage && window.localStorage.getItem("mobileMenu");-->
-<!--    const mobileMenuToggle = document.querySelector(".toggle-mobile-menu");-->
-<!--    const menu = document.getElementById('mobile-menu');-->
-<!--    const isMenu = getMobileMenu === "true";-->
-
-<!--    if (getMobileMenu !== null) {-->
-<!--        menu.classList.toggle("hidden", isMenu);-->
-<!--    }-->
-
-<!--    mobileMenuToggle.addEventListener("click", () => {-->
-<!--        menu.classList.toggle("hidden");-->
-<!--        window.localStorage &&-->
-<!--        window.localStorage.setItem(-->
-<!--            "mobileMenu",-->
-<!--            menu.classList.contains("hidden") ? "true" : "false",-->
-<!--        );-->
-<!--    });-->
-
-<!--    function toggleMobileMenu() {-->
-<!--        var toggleMobileMenu = document.getElementById('mobile-menu');-->
-
-<!--        if(menu.classList.contains('hidden')) {-->
-<!--            document.getElementById('mobile-menu').classList.remove('hidden');-->
-<!--        } else {-->
-<!--            document.getElementById('mobile-menu').classList.add('hidden');-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->

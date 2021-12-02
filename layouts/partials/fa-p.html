@@ -1,0 +1,8 @@
+<!--Nóva-->
+<span class="content-fa-p">
+{{- $fname:=print "themes/prine/static/fonts/fa/" . ".svg" -}}
+{{- $path:="<path" -}}
+{{- $fill:="<path fill=\"currentColor\"" -}}
+                  {{ replace (readFile $fname) $path $fill | safeHTML }}
+</span>
+<!--Nóva--> 
