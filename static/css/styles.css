@@ -33,7 +33,7 @@
     color: #666666;
 }
 
-
+/* ROOT */
 :root {
     --fontSize: 1.0rem;
     --background: #222222;
@@ -71,9 +71,9 @@
 /* MAIN */
 .container,
 .content {
+    display: flex;
     font-size: var(--fontSize);
     background-color: var(--background);
-    display: flex;
     justify-content: center;
 }
 
@@ -97,23 +97,6 @@
     }
 }
 
-
-.content-large {
-    text-decoration: none;
-    font-family: Terminus;
-    font-size: 2.0rem;
-}
-
-.content-paragraph {
-    font-family: Terminus;
-    font-size: 1.0rem;
-}
-
-.content-medium {
-    font-family: Terminus;
-    font-size: 1.7rem;
-}
-
 /* ATTRIBUTES */
 .glow {
     text-shadow: #ffffff 0px 0px 8px;
@@ -121,18 +104,6 @@
 
 a:link {
     text-decoration: none;
-}
-
-post.a {
-    text-decoration: none;
-}
-
-.inline-svg {
-    display: inline-block;
-    height: 1.15rem;
-    width: 1.15rem;
-    top: 0.15rem;
-    position: relative;
 }
 
 .menu-icon {
@@ -150,14 +121,6 @@ post.a {
     padding-right: 24px;
 }
 
-.menu-alt {
-    font-size:1.1rem;
-    font-family: Terminus;
-    margin-right: 18px;
-    padding-right: 24px;
-    display: block
-}
-
 .menu a:hover {
     text-decoration: underline;
 }
@@ -168,17 +131,13 @@ post.a {
 
 
 /* DISPLAY MOBILE */
-
 @media screen and (max-width:768px) {
-
     .content-desktop {
         display: none;
     }
-
     .content-mobile {
         display: block;
     }
-
     .menu {
         position: absolute;
         display: none;
@@ -208,25 +167,44 @@ post.a {
     }
 }
 
+/*
+ * CSS "What it does" style classes
+ */
 
-
-@font-face {
+.content-h1 {
     font-family: Terminus;
-    src: url('fonts/TerminusModern.ttf') format('truetype');
+    font-size: 2.0rem;
+}
+.content-h2 {
+    font-family: Terminus;
+    font-size: 1.7rem;
+}
+.content-p {
+    font-family: Terminus;
+    font-size: 1.0rem;
+}
+.content-container {
+    color: var(--color);
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    padding: 20px;
+    margin: 20px auto
+}
+@media (max-width:899px) {
+    .content-container {
+        max-width: 660px
+    }
 }
 
-@font-face {
-    font-family: Terminus;
-    src: url('fonts/TerminusModern.ttf') format('truetype');
-}
 
-/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
-
-
-/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
+/* ------------------------------------
+ * Prine Theme Above This Line
+ * ------------------------------------
+ */
 
 
-/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --  */
+
 
 
 .button-container {
@@ -920,20 +898,7 @@ blockquote.twitter-tweet {
 
 
 
-.post {
-    color: var(--color);
-    width: 100%;
-    max-width: 800px;
-    text-align: left;
-    padding: 20px;
-    margin: 20px auto
-}
 
-@media (max-width:899px) {
-    .post {
-        max-width: 660px
-    }
-}
 
 .post:not(:last-of-type) {
     border-bottom: 1px solid #dcdcdc;
