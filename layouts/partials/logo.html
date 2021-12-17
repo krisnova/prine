@@ -1,16 +1,16 @@
 <span class="logo glow">
     <a href="/" class="logo" style="text-decoration: none">
-    <span class="logo-punc">[</span>
-    <span class="logo-user">{{ $.Site.Params.Logo.logoUser }}</span>
-    <span class="logo-punc">@</span>
-    <span class="logo-host">{{ $.Site.Params.Logo.logoHost }}</span>
-    <span class="logo-punc">]: </span>
+    <span class="color-highlight">[</span>
+    <span class="color-alt">{{ $.Site.Params.Logo.logoUser }}</span>
+    <span class="color-highlight">@</span>
+    <span class="color-highlight">{{ $.Site.Params.Logo.logoHost }}</span>
+    <span class="color-alt">]: </span>
     </a>
     {{ if .File.BaseFileName }}
-    <span class="logo-host">  ~/{{ .File.BaseFileName }}</span>
+    <span class="color-highlight">  ~/{{ .File.BaseFileName }}</span>
     {{ else }}
-    <span class="logo-host">  ~</span>
+    <span class="color-highlight">  ~</span>
     {{ end }}
-    <span class="logo-punc">></span><span class="logo-user">$</span>
+    <span class="color-alt">$</span>
   <span class="logo-cursor"></span>
 </span>
