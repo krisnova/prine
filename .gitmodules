@@ -1,3 +1,0 @@
-[submodule "static/brand"]
-	path = static/brand
-	url = git@github.com:kris-nova/brand.git
