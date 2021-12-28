@@ -1,30 +1,32 @@
+
 <head>
+<!-- Meta -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="{{ .Permalink }}" />
+<link rel="stylesheet" href="{{ "/brand/nova.css" | absURL }}" />
+<!-- Unfurl -->
+{{- partial "unfurl.html" . -}}
+{{- partial "specific-head.html" . -}}
+<!--Title-->
+{{ block "title" . }}
+<title>
+{{ if .IsHome }}
+{{ $.Site.Title }}{{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
+{{ else }}
+{{ $.Site.Title }}{{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
+{{ end }}
+</title>
+{{ end }}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ $.Site.Params.GoogleAnalyticsID }}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noodp" />
-    <link rel="canonical" href="{{ .Permalink }}" />
-    <link rel="stylesheet" href="{{ "/brand/nova.css" | absURL }}" />
-
-    <!--Title-->
-    {{ block "title" . }}
-    <title>
-        {{ if .IsHome }}
-        {{ $.Site.Title }}{{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
-        {{ else }}
-        {{ $.Site.Title }}{{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}
-        {{ end }}
-    </title>
-    {{ end }}
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ $.Site.Params.GoogleAnalyticsID }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', '{{ $.Site.Params.GoogleAnalyticsID }}');
-    </script>
+gtag('config', '{{ $.Site.Params.GoogleAnalyticsID }}');
+</script>
 
 </head>

@@ -1,0 +1,30 @@
+<!-- Unfurl -->
+{{ if .IsHome }}
+<meta name="description" content="{{ $.Site.Params.Description }}"/>
+<meta name="keywords" content="{{ $.Site.Params.Keywords }}"/>
+{{ else }}
+<meta name="description" content="{{ .Summary | plainify }}"/>
+<meta name="keywords" content="{{ $.Site.Params.Keywords }}"/>
+{{ end }}
+<!-- Twitter Summary Card -->
+<meta name="twitter:image" content="{{ $.Site.Params.UnfurlLogo }}"/>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="{{ $.Site.Params.UnfurlCreator }}">
+<meta name="twitter:site" content="{{ $.Site.Params.UnfurlSite }}">
+<!-- OG Summary Card -->
+<meta property="og:image" content="{{ $.Site.Params.UnfurlLogo }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ $.Site.Title }}{{ with $.Site.Params.Subtitle }} — {{ . }}{{ end }}" />
+<meta property="og:site_name" content="{{ $.Site.Params.UnfurlSite }}" />
+<!-- Description -->
+{{ if .IsHome }}
+<meta name="twitter:title" content="{{ $.Site.Params.UnfurlTitle }}"/>
+<meta name="twitter:description" content="{{ $.Site.Params.Description }}" />
+<meta property="og:description" content="{{ $.Site.Params.Description }}" />
+<meta property="og:title" content="{{ $.Site.Params.UnfurlTitle }}" />
+{{ else }}
+<meta name="twitter:title" content="{{ .Title | plainify }}"/>
+<meta name="twitter:description" content="{{ .Summary | plainify }}"/>
+<meta property="og:description" content="{{ with .Params.Keywords }}{{ delimit . ", " }}{{ else }}{{ $.Site.Params.Keywords }}{{ end }}"/>
+<meta property="og:title" content="{{ .Title | plainify }}" />
+{{ end }}
