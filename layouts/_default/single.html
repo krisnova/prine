@@ -2,7 +2,12 @@
 {{ $isntDefault := not (or (eq (trim $.Site.Params.contentTypeName " ") "posts") (eq (trim $.Site.Params.contentTypeName " ") "")) }}
   {{ $contentTypeName := cond $isntDefault (string $.Site.Params.contentTypeName) "posts" }}
 
-  <div class="content-container">
+    <div class="flex-row">
+    <div class="content">
+<!--      Limit Width-->
+      <div class="content-container">
+
+
     <h1 class="content-h1">{{ .Title | markdownify }}</h1>
     <div class="content-meta">
           <div class="content-more">
@@ -64,5 +69,7 @@
         {{ partial "comments.html" . }}
       {{ end }}
     {{ end }}
+      </div>
+  </div>
   </div>
 {{ end }}
