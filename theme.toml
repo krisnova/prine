@@ -6,12 +6,21 @@ homepage = "https://nivenly.com/"
 tags = []
 features = []
 min_version = "0.41.0"
+baseURL = '/'
+languageCode = 'en-us'
+title = 'Hacking Capitalism'
+subtitle = 'Modeling Humans, Computers, and Money'
+theme = "prine"
 
 [author]
   name = "Kris Nóva <kris@nivenly.com>"
   homepage = "https://nivenly.com"
-
+  
 [params]
+    description = "This is an independently published book about modeling the tech industry as a system. Particularly this book will model computers, humans, and money and their subsequent relationships. Understand the alarming state of the tech industry for better or for worse."
+    # Love the TikTok
+    keywords = "Book, Purchase, Sign up, Author, Download, PDF, Capitalism, Hacking, Tech Industry, Silicon Valley, San Francisco, Bay Area, Exploit, Career, Guide, Humans, Computers, Money, books, booktok, bookish, bookworm, bookrecs, fyp, book, foryou, bookstan"
+    ISBN = ""
     twitterURL = "https://twitter.com/krisnova"
     twitterText = "@krisnova"
     githubURL = "https://github.com/kris-nova"
@@ -22,6 +31,18 @@ min_version = "0.41.0"
     youtubeText = "Official YouTube channel!"
     settingsURL = "https://nivenly.com"
     settingsText = "Tweak your site's settings."
-    footerText = "First you go up. Then you come back down."
+    copyright = "2022 Kris Nóva"
+    googleAnalyticsID = "G-2N5YYN3BX6"
+    unfurlLogo = "https://hackingcapitalism.io/img/art.png"
+    unfurlCreator = "Kris Nóva"
+    unfurlSite = "https://hackingcapitalism.io"
+    unfurlTitle = "Hacking Capitalism | A Guide To Exploiting The Tech Industry"
 
-
+[languages.en.params.logo]
+    logoUser = "nova"
+    logoHost = "hc"
+[languages.en.menu]
+    [[languages.en.menu.main]]
+        identifier = "readme"
+        name = "readme"
+        url = "/readme"
